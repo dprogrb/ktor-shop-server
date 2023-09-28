@@ -1,6 +1,7 @@
 package com.example
 
 import com.example.plugins.*
+import com.example.plugins.DatabasesFactory.initializationDatabase
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
@@ -11,8 +12,8 @@ fun main() {
 }
 
 fun Application.module() {
+    initializationDatabase()
     configureSerialization()
-    configureDatabases()
     configureMonitoring()
     configureSecurity()
     configureRouting()
